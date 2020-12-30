@@ -1,4 +1,4 @@
-# Profiling of NIH 3T3-L1 mouse adipocytes exposed to adipgenic compounds
+# Profiles of mouse adipocytes exposed to adipogenic compounds
 
 R code of 3' digital gene expression of NIH 3T3-L1 mouse adipocytes reported in the manuscript:
 
