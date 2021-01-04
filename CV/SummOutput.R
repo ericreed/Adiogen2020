@@ -88,16 +88,19 @@ resGath <- resFram %>%
 resGath$type<- factor(resGath$type, levels = c("Bag-merge", "Pre-merge", "Pooled", "Classic"))
 
 # Create boxplots
-png(cvOutBoxPlot, height = 400, width = 800)
+png(cvOutBoxPlot, height = 350, width = 900)
 ggplot(resGath, aes(y = value, x = type)) +
     geom_boxplot() +
     facet_wrap(~metric, nrow = 1) +
+    scale_y_continuous(name = "Performance Estimate") +
     theme_bw() +
     theme(
-        axis.title = element_blank(),
-        axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1, face = "bold", size = 15),
+        axis.title.x = element_blank(),
+        axis.title.y = element_text(size = 18),
+        axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1, face = "bold", size = 18),
         axis.text.y = element_text(size = 15),
-        strip.text = element_text(face = "bold", size = 15)
+        strip.text = element_text(face = "bold", size = 15),
+        panel.spacing = unit(2, "lines")
     )
 dev.off()
 
